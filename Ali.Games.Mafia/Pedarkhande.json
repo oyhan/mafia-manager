@@ -1,0 +1,18 @@
+{
+  "Sides": [
+    {
+      "Name": "Mafia",
+      "Id": 0
+    },
+    {
+      "Name": "Citizens",
+      "Id": 1
+    },
+    {
+      "Name": "Independent",
+      "Id": -1
+    }
+  ],
+ 
+ 
+}

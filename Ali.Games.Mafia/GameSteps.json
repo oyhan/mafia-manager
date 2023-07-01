@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Distribute Roles",
+    "Order": 0
+  },
+  {
+    "Name": "Introduction Day",
+    "Order": 1
+  },
+  {
+    "Name": "Introduction Night",
+    "Order": 2
+  },
+  {
+    "Name": "Day",
+    "Order": 3
+  },
+  {
+    "Name": "Night",
+    "Order": 4
+  }
+
+]

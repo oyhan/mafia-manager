@@ -1,0 +1,36 @@
+{
+  "Abilities": [
+    {
+      "Id": 0,
+      "Name": "Shoot"
+    },
+    {
+      "Id": 1,
+      "Name": "Save"
+    },
+    {
+      "Id": 2,
+      "Name": "Inquiry"
+    },
+    {
+      "Id": 3,
+      "Name": "Block"
+    },
+    {
+      "Id": 4,
+      "Name": "Buy"
+    },
+    {
+      "Id": 5,
+      "Name": "Revive"
+    },
+    {
+      "Id": 6,
+      "Name": "6thSense"
+    },
+    {
+      "Id": 7,
+      "Name": "Armor"
+    }
+  ]
+}

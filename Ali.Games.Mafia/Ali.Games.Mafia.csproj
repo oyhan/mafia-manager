@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Core\Actions\Night\2MafiaDecision.cs" />
+    <Compile Remove="Core\Actions\Night\CitizenCane.cs" />
+    <Compile Remove="Core\Actions\Night\Constantine.cs" />
+    <Compile Remove="Core\Actions\Night\DoctorSave.cs" />
+    <Compile Remove="Core\Actions\Night\Nostradamous.cs" />
+    <Compile Remove="Core\Actions\Night\Professional.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Abilities.json" />
+    <None Remove="DaySteps.json" />
+    <None Remove="GameSteps.json" />
+    <None Remove="Pedarkhande.json" />
+    <None Remove="Players.json" />
+    <None Remove="Roles.json" />
+    <None Remove="Sides.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Abilities.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DaySteps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GameSteps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Players.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sides.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Roles.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pedarkhande.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
