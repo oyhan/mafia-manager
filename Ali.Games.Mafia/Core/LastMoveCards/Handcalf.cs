@@ -25,7 +25,7 @@ namespace Ali.Games.Mafia.LastMoveCards
 
             Console.WriteLine($"{selectedPlayer.Name} can not do his job in next night");
 
-            round.Disabled.Add(selectedPlayer);
+            round.DisabledNextRound.Add(selectedPlayer);
             To = selectedPlayer;
 
             round.Game.UsedCards.Add(this);

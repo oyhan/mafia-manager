@@ -23,5 +23,16 @@ namespace Ali.Games.Mafia.Extensions
 
             return selectedItem;
         }
+
+        public static List<T> ShowAndPickMultipleOption<T>(this ConsoleColor color, IList<T> items,int options, string message) where T : IHasName
+        {
+            var selection = new List<T>();
+            for (int i = 0; i < options; i++)
+            {
+                selection.Add(ShowAndPickOneOption(color, items, message));
+            }
+
+            return selection;
+        }
     }
 }

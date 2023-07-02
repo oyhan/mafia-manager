@@ -1,4 +1,6 @@
 ﻿using Ali.Games.Mafia.Core.Actions;
+using Ali.Games.Mafia.Core.Models;
+using Ali.Games.Mafia.Core.Roles;
 using Ali.Games.Mafia.Roles;
 using Newtonsoft.Json;
 using System;
@@ -33,31 +35,50 @@ namespace Ali.Games.Mafia.Core
             return this;
         }
 
+        public GameBuilder ConfigureSteps()
+        {
+            var content = File.ReadAllText("GameSteps.json");
+            var steps = JsonConvert.DeserializeObject<List<GameStep>>(content);
+            _game.Steps = steps;
+            return this;
+        }
+
         public GameBuilder DistributeRoles() 
         {
             var players = _game.Players;
            
 
 
-            var cards = Roles;
-            var simpleMafi = cards.FirstOrDefault(r => r.Name == MafieRole);
-            var simpleCitizen = cards.FirstOrDefault(r => r.Name == CitizenRole);
-            cards.Remove(simpleMafi);
-            cards.Add(simpleCitizen);
-            cards.Add(simpleCitizen);
+            var cards = Roles.Select(c=>c.Name).ToList();
+            cards.Append("Citizen");
+            cards.Append("Citizen");
+            //var simpleMafi = cards.FirstOrDefault(r => r.Name == MafieRole);
+            //var simpleCitizen = cards.FirstOrDefault(r => r.Name == CitizenRole);
+            //cards.Remove(simpleMafi);
+            //cards.Add(simpleCitizen);
+            //cards.Add(simpleCitizen);
 
-            if (players.Count!= cards.Count && Roles.Count!=11)
+            if (players.Count!= cards.Count() && Roles.Count!=11)
             {
                 throw new Exception("Playes count should be 11");
             }
             var numbers = cards.Select(c => cards.IndexOf(c)).ToArray();
             foreach (var player in players)
             {
-                var randNo = new Random().Next(numbers.Count()-1);
-                var randomCard = numbers[randNo];
-                player.Role = cards[randomCard];
-                cards.Remove(player.Role);
-                numbers = cards.Select(c => cards.IndexOf(c)).ToArray();
+                if (numbers.Any())
+                {
+                    var randNo = new Random().Next(numbers.Count() - 1);
+                    var randomCard = numbers[randNo];
+                    player.Role = new RolesConstants()[cards[randomCard]];
+                    cards.Remove(cards[randomCard]);
+                    numbers = cards.Select(c => cards.IndexOf(c)).ToArray();
+                }
+                else
+                {
+                    player.Role = null;
+                }
+
+                
             }
             return this;
         }
@@ -71,7 +92,7 @@ namespace Ali.Games.Mafia.Core
                 CurrentAction = null,
                 DoneActions = null,
                 LeadOfTalk = null,
-                Number = 0,
+                Number = 1,
                 Game = _game, 
             };
             _game.Rounds.Add(firstRound);

@@ -1,4 +1,4 @@
-﻿using Ali.Games.Mafia.LastMoveCards;
+﻿using Ali.Games.Mafia.Core.LastMoveCards;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

@@ -24,9 +24,9 @@ namespace Ali.Games.Mafia.LastMoveCards
             var howManyShouldGetSilenced = totalCount>=half ? 2 :1;
             for (int i = 0; i < howManyShouldGetSilenced; i++)
             {
-                var selectList = players.Except(round.Muted).ToList();
+                var selectList = players.Except(round.MutedNextRound).ToList();
                 var message = "Select the one you want to mute";
-                round.Muted.Add(ConsoleColor.White.ShowAndPickOneOption(selectList, message));
+                round.MutedNextRound.Add(ConsoleColor.White.ShowAndPickOneOption(selectList, message));
             }            
         }
 

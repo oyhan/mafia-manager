@@ -16,18 +16,23 @@ namespace Ali.Games.Mafia.Core
         public List<Player> Alives { get; set; } = new();
         public List<(Player,int)> Votes { get; set; } = new();
         public List<(Player,int)> DefenceVote { get; set; } = new();
-        public Player Fired { set; get; }
+        public Player Fired { set; get; } = null;
         public List<Player> Deads { get; set; } = new();
         public List<Player> Warned { get; set; } = new();
         public List<Player> Muted { get; set; } = new();
+        public List<Player> MutedNextRound { get; set; } = new();
         public List<Player> Kicked { get; set; } = new();
         public List<Player> Talked { get; set; } = new();
         public List<Player> DefenceTalk { get; set; } = new();
         public List<Player> Disabled { get; set; } = new();
+        public List<Player> DisabledNextRound { get; set; } = new();
         public List<Player> InDefence => Votes.Where(p => p.Item2 >= DefenceThreashold).Select(c => c.Item1).ToList();
 
-        public int NoOfAliveMafias => Alives.Count(p => p.Side == Side.Mafia);
-        public int NoOfAliveCitiZens => Alives.Count(p => p.Side == Side.Citizen);
+        public List<Player> Citizens => Alives.Where(p => p.Side == Side.Mafia).ToList();
+        public List<Player> Mafias => Alives.Where(p => p.Side == Side.Mafia).ToList();
+
+        public int NoOfAliveMafias => Mafias.Count();
+        public int NoOfAliveCitiZens => Citizens.Count();
 
         public GamePhase CurrentPhase { get; set; }
 
@@ -38,6 +43,6 @@ namespace Ali.Games.Mafia.Core
         public IAction CurrentAction { get; set; } = null;
 
         public Game Game { get; set; }
-
+        public List<Player> Slaughtered { get; set; } = new();
     }
 }

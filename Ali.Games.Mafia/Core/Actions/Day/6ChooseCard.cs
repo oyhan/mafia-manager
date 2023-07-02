@@ -1,5 +1,5 @@
-﻿using Ali.Games.Mafia.Extensions;
-using Ali.Games.Mafia.LastMoveCards;
+﻿using Ali.Games.Mafia.Core.LastMoveCards;
+using Ali.Games.Mafia.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

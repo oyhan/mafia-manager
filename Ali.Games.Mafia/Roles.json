@@ -4,14 +4,9 @@
     "Side": 0,
     "Abilities": [
       {
-        "Id": 0,
-        "Name": "Shoot",
-        "Count": 0
-      },
-      {
         "Id": 6,
         "Name": "6thSense",
-        "Count": 1
+        "Count": -1
       }
     ]
   },
@@ -19,11 +14,6 @@
     "Name": "Saul Goodman",
     "Side": 0,
     "Abilities": [
-      {
-        "Id": 0,
-        "Name": "Shoot",
-        "Count": 0
-      },
       {
         "Id": 4,
         "Name": "Buy",
@@ -36,18 +26,14 @@
     "Side": 0,
     "Abilities": [
       {
-        "Name": "Shoot",
-        "Count": 0
-      },
-      {
         "Id": 3,
         "Name": "Block",
-        "Count": 0
+        "Count": -1
       }
     ]
   },
   {
-    "Name": "Citizen Cane",
+    "Name": "CitizenCane",
     "Side": 1,
     "Abilities": [
       {
@@ -75,24 +61,13 @@
       {
         "Name": "Shoot",
         "Count": 2
-      },
-      {
-        "Id": 7,
-        "Name": "Armor",
-        "Count": 1
       }
     ]
   },
   {
     "Name": "Nostradamus",
     "Side": -1,
-    "Abilities": [
-      {
-        "Id": 7,
-        "Name": "Armor",
-        "Count": 0
-      }
-    ]
+    "Abilities": []
   },
   {
     "Name": "Constantine",
@@ -104,20 +79,20 @@
         "Count": 1
       }
     ]
-  },
-  {
-    "Name": "Citizen",
-    "Side": 1,
-    "Abilities": []
-  },
-  {
-    "Name": "Mafia",
-    "Side": 0,
-    "Abilities": [
-      {
-        "Name": "Shoot",
-        "Count": 0
-      }
-    ]
   }
+  //{
+  //  "Name": "Citizen",
+  //  "Side": 1,
+  //  "Abilities": []
+  //},
+  //{
+  //  "Name": "Mafia",
+  //  "Side": 0,
+  //  "Abilities": [
+  //    {
+  //      "Name": "Shoot",
+  //      "Count": 0
+  //    }
+  //  ]
+  //}
 ]

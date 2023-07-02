@@ -1,23 +1,23 @@
 [
   {
-    "Name": "Distribute Roles",
-    "Order": 0
-  },
-  {
     "Name": "Introduction Day",
-    "Order": 1
+    "Round": 1,
+    "Actions": [ "SetLeadOfTalk", "PlayersTalk"]
   },
   {
     "Name": "Introduction Night",
-    "Order": 2
+    "Round": 2,
+    "Actions": [ "NostradamusIntro", "MafiaIntro" ]
   },
   {
     "Name": "Day",
-    "Order": 3
+    "Round": 3,
+    "Actions": [ "IDayAction" ]
   },
   {
     "Name": "Night",
-    "Order": 4
+    "Round": 4,
+    "Actions": [ "INightAction" ]
   }
 
 ]

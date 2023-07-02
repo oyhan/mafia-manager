@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Core\Actions\Night\2MafiaDecision.cs" />
     <Compile Remove="Core\Actions\Night\CitizenCane.cs" />
     <Compile Remove="Core\Actions\Night\Constantine.cs" />
     <Compile Remove="Core\Actions\Night\DoctorSave.cs" />
@@ -52,6 +51,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

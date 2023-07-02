@@ -1,4 +1,6 @@
-﻿using Ali.Games.Mafia.LastMoveCards;
+﻿using Ali.Games.Mafia.Core.LastMoveCards;
+using Ali.Games.Mafia.Core.Models;
+using Ali.Games.Mafia.LastMoveCards;
 using Ali.Games.Mafia.Roles;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,7 @@ namespace Ali.Games.Mafia.Core
 
         public Player LeadOfTalk { get; set; } = null;
         public List<ILastMoveCard> UsedCards { get; set; } = new();
+        public List<GameStep>? Steps { get; internal set; }
 
         public void Start()
         {
